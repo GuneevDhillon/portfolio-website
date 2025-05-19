@@ -1,127 +1,199 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity Web Player | Fries in the Bag (2)</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
-      </div>
-      <div id="unity-warning"> </div>
-      <div id="unity-footer">
-        <div id="unity-logo-title-footer"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title">Fries in the Bag (2)</div>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="icon" type="image/png" href="images/favicon-image.png">
+  <title>Guneev Dhillon Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="images/profile-image.png" alt="Profile" class="profile-img">
+      <div class="intro">
+        <h1>Guneev Dhillon</h1>
+        <p>Builder, coder, and ML enthusiast—pushing the boundaries where neural networks intersect with hardware and embedded systems as a UBC engineering student.</p>
+        <a href="mailto:guneevd@student.ubc.ca" class="contact-btn">✉️ Contact Me</a>
       </div>
     </div>
-    <script>
-      var canvas = document.querySelector("#unity-canvas");
+    <div class="links">
+      <a href="https://www.linkedin.com/in/guneev-dhillon/" target="_blank">LinkedIn</a> | <a href="images/resume-image.png" target="_blank">Resume</a><!-- | <a href="#">CV</a>-->
+    </div>
 
-      // Shows a temporary message banner/ribbon for a few seconds, or
-      // a permanent error message on top of the canvas if type=='error'.
-      // If type=='warning', a yellow highlight color is used.
-      // Modify or remove this function to customize the visually presented
-      // way that non-critical warnings and error messages are presented to the
-      // user.
-      function unityShowBanner(msg, type) {
-        var warningBanner = document.querySelector("#unity-warning");
-        function updateBannerVisibility() {
-          warningBanner.style.display = warningBanner.children.length ? 'block' : 'none';
-        }
-        var div = document.createElement('div');
-        div.innerHTML = msg;
-        warningBanner.appendChild(div);
-        if (type == 'error') div.style = 'background: red; padding: 10px;';
-        else {
-          if (type == 'warning') div.style = 'background: yellow; padding: 10px;';
-          setTimeout(function() {
-            warningBanner.removeChild(div);
-            updateBannerVisibility();
-          }, 5000);
-        }
-        updateBannerVisibility();
-      }
+    <h2>Experience</h2>
 
-      var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/The Brainrot Game 2024.loader.js";
-      var config = {
-        arguments: [],
-        dataUrl: buildUrl + "/The Brainrot Game 2024.data.br",
-        frameworkUrl: buildUrl + "/The Brainrot Game 2024.framework.js.br",
-        codeUrl: buildUrl + "/The Brainrot Game 2024.wasm.br",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "DefaultCompany",
-        productName: "Fries in the Bag (2)",
-        productVersion: "1.0",
-        showBanner: unityShowBanner,
-      };
+    <!-- Card 1 -->
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('images/design-team-presentation.jpg');">
+        <span>Design Team</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>My team and I are working to make a neural interface, using an EEG-based system, to control a smartphone with brainwave activity. I am wokring with the system signal to help make a pipline which processes raw EEG data and converts it into an actionable command. In the software group, I am helping develop an app with an interactive game to calibrate an EEG for new users. At a recent design presentation (MURC), I practiced effectively communicating our technical project to potential stakeholders.</p>
+          </div>
+          <div class="dropdown-link">
+            <a target=”_blank” href="images/MURC-poster.png">MURC presentation</a>
+          </div>
+          <div class="dropdown-link">
+            <a target=”_blank” href="https://ubcmint.github.io/">Design Team Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      // By default, Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+    <!-- Card 2 -->
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('images/code-ninjas-image.png');">
+        <span>Coding Instructor</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>Over two years, I taught over 200 students programming in C#, JavaScript, and Python at Code Ninjas. I helped kids build games, robots, and logic skills using an online IDE, Unity, and Roblox Studio.</p>
+          </div>
+          <div class="dropdown-link">
+            <a href="https://www.codeninjas.com/surrey-bc-ca">Code Ninja's Website</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      // If you would like all file writes inside Unity Application.persistentDataPath
-      // directory to automatically persist so that the contents are remembered when
-      // the user revisits the site the next time, uncomment the following line:
-      // config.autoSyncPersistentDataPath = true;
-      // This autosyncing is currently not the default behavior to avoid regressing
-      // existing user projects that might rely on the earlier manual
-      // JS_FileSystem_Sync() behavior, but in future Unity version, this will be
-      // expected to change.
+    <h2>Projects</h2>
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        // Mobile device style: fill the whole browser client area with the game canvas:
+    <!-- Game Dev -->
+    <h3 style="color: rgb(221, 208, 228);">Game Development:</h3>
 
-        var meta = document.createElement('meta');
-        meta.name = 'viewport';
-        meta.content = 'width=device-width, height=device-height, initial-scale=1.0, user-scalable=no, shrink-to-fit=yes';
-        document.getElementsByTagName('head')[0].appendChild(meta);
-        document.querySelector("#unity-container").className = "unity-mobile";
-        canvas.className = "unity-mobile";
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('images/flappy-bird-image.png');">
+        <span>Flappy Bird</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>I made a Unity-based clone of Flappy Bird with score tracking. I learned about physics in 2D environments and the basics of object-oriented programming (C#).</p>
+          </div>
+          <div class="dropdown-video">
+            <iframe src="https://www.youtube.com/embed/0fb1xyFRbvM" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
 
-        // To lower canvas resolution on mobile devices to gain some
-        // performance, uncomment the following line:
-        // config.devicePixelRatio = 1;
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('images/catcher-game-image.png');">
+        <span>Catcher Game</span>
+      </div>
+    
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>I independently developed a catcher game built in Unity where players catch falling items. This project sharpened my C# skills.</p>
+          </div>
+          <div class="dropdown-video">
+            <iframe src="https://www.youtube.com/embed/FnweS22D7Cg" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+        <a href="https://yourgamehost.com/my-game" target="_blank" class="play-button">
+          ▶️ Play My Unity Game
+        </a>
+      </div>
+    </div>
+    
 
+    <!-- Front-End
+    <h3 style="color: rgb(221, 208, 228);">Front-End:</h3>
 
-      } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
-      }
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('youtube.jpg');">
+        <span>Copy of YouTube</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>Recreated YouTube's UI using HTML and CSS. This project taught me the fundamentals of HTML, CSS, and some JavaScript.</p>
+          </div>
+          <div class="dropdown-video">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
-      document.querySelector("#unity-loading-bar").style.display = "block";
+    <!-- AI -->
+    <h3 style="color: rgb(221, 208, 228);">AI:</h3>
 
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          document.querySelector("#unity-progress-bar-full").style.width = 100 * progress + "%";
-              }).then((unityInstance) => {
-                document.querySelector("#unity-loading-bar").style.display = "none";
-                document.querySelector("#unity-fullscreen-button").onclick = () => {
-                  unityInstance.SetFullscreen(1);
-                };
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('images/productx-image.jpeg');">
+        <span>ProductX Hackathon</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>Built a web app that transforms novel text into manga panels using OpenAI image generation models and AI APIs. This project taught me how to collaborate and work around obstacles, while also realizing when it is time to alter the approach to the question.</p>
+          </div>
+          <div class="dropdown-video">
+            <iframe src="https://www.youtube.com/embed/watch?v=WfKqnkYA5JA" frameborder="0" allowfullscreen></iframe>
+          </div>
+          <div class="dropdown-link">
+            <a target=”_blank” href="https://devpost.com/software/mangify">Devpost</a>
+          </div>
+        </div>
+        <div class="dropdown-link">
+          <a target=”_blank” href="https://mangify.vercel.app/">Try it out</a>
+        </div>
+        </div>
+      </div>
+    </div>
 
-              }).catch((message) => {
-                alert(message);
-              });
-            };
+    <!-- MATLAB -->
+    <h3 style="color: rgb(221, 208, 228);">MATLAB:</h3>
 
-      document.body.appendChild(script);
+    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('images/matlab-joint-image.png');">
+        <span>Motion Tracking</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>Used MATLAB to track joint displacement over time and generate real-time plots of joint angles and displacement. This is especially applicable to biomechanics, where joint angles are important to study.</p>
+          </div>
+          <div class="dropdown-link">
+            <a target=”_blank” href="images/Tracker Lab.xlsx">Download data from tracker lab (this downloads a .xlsx file)</a>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    </script>
-  </body>
+<!--    <div class="card-wrapper">
+      <div class="card-dropdown clickable" style="background-image: url('circuit.jpg');">
+        <span>Simulink RC Circuit</span>
+      </div>
+      <div class="dropdown-content">
+        <div class="dropdown-inner">
+          <div class="dropdown-text">
+            <p>Simulated and analyzed an RC circuit in Simulink. Explored charging/discharging dynamics and time constants.</p>
+          </div>
+          <div class="dropdown-video">
+            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" frameborder="0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  -->
+    <p class="back-to-top"><a href="#">Click to go back to top</a></p>
+  </div>
+
+  <!-- JS to toggle each dropdown -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.clickable').forEach(card => {
+        card.addEventListener('click', () => {
+          const content = card.nextElementSibling;
+          content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        });
+      });
+    });
+  </script>
+</body>
 </html>
